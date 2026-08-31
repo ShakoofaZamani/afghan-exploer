@@ -1,0 +1,713 @@
+```html
+<!doctype html>
+<!--
+  <!DOCTYPE html> tells the browser that this document uses HTML5.
+-->
+
+<html lang="en">
+  <!--
+  <html> is the root element of the whole webpage.
+  lang="en" tells browsers and screen readers that the page language is English.
+-->
+
+  <head>
+    <!--
+    The <head> contains information ABOUT the webpage.
+    Most content inside <head> is not directly visible on the webpage.
+  -->
+
+    <meta charset="UTF-8" />
+    <!--
+    Sets the character encoding to UTF-8.
+    UTF-8 allows us to use English letters, symbols,
+    Dari/Persian text, emojis, and many other characters.
+  -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    Makes the website responsive on phones and tablets.
+
+    width=device-width
+    = use the actual width of the user's device.
+
+    initial-scale=1.0
+    = start the page at normal zoom level.
+  -->
+
+    <title>Afghan Explorer</title>
+    <!--
+    The <title> appears in the browser tab.
+  -->
+
+    <link rel="stylesheet" href="style.css" />
+    <!--
+    Connects this HTML file to our external CSS file.
+
+    rel="stylesheet"
+    = tells the browser this file contains CSS styles.
+
+    href="style.css"
+    = location/name of the CSS file.
+  -->
+  </head>
+
+  <body>
+    <!--
+    Everything inside <body> is the visible content of the webpage.
+  -->
+
+    <!--
+       HEADER
+       Contains the website logo and navigation menu.
+ -->
+
+    <header class="header">
+      <!--
+      <header> is a semantic HTML element.
+
+      It usually contains:
+      - Logo
+      - Navigation
+      - Introductory website content
+
+      class="header" is used by CSS to style this header.
+    -->
+
+      <nav class="navbar container">
+        <!--
+        <nav> represents the navigation area of the website.
+
+        We are using TWO classes:
+
+        navbar
+        = styles the navigation itself.
+
+        container
+        = usually controls the maximum width
+          and keeps content centered.
+      -->
+
+        <!-- Website Logo -->
+        <a href="#" class="logo"> Afghan<span>Explorer</span> </a>
+
+        <!--
+        <a> creates a link.
+
+        href="#"
+        = currently links to the top/current page.
+
+        <span>
+        = lets us style the word "Explorer"
+          differently using CSS.
+      -->
+
+        <!-- Mobile Menu Button -->
+        <button class="menu-btn" id="menuBtn">☰</button>
+
+        <!--
+        This button is mainly used on small screens.
+
+        ☰ is called a hamburger menu icon.
+
+        class="menu-btn"
+        = used for CSS styling.
+
+        id="menuBtn"
+        = gives this button a unique name.
+          JavaScript can use this ID to find the button.
+
+        For example:
+
+        document.getElementById("menuBtn")
+      -->
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navLinks">
+          <!--
+          <ul> means unordered list.
+
+          Navigation links are often placed inside a list.
+
+          id="navLinks"
+          = allows JavaScript to show/hide this menu
+            on mobile devices.
+        -->
+
+          <li>
+            <!--
+            <li> means list item.
+          -->
+
+            <a href="#destinations"> Destinations </a>
+
+            <!--
+            href="#destinations"
+            jumps to the element that has:
+
+            id="destinations"
+          --></li>
+
+          <li>
+            <a href="#journey"> Journey </a>
+          </li>
+
+          <li>
+            <a href="#about"> About </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 
+       MAIN CONTENT
+       <main> contains the main information of the webpage.
+  -->
+
+    <main>
+      <!-- 
+         HERO SECTION
+
+         The hero section is usually the first large
+         section users see when they open the website.
+    -->
+
+      <section class="hero">
+        <!--
+        <section> groups related content together.
+
+        class="hero"
+        = lets CSS give this section its special design.
+      -->
+
+        <div class="hero-content container">
+          <!--
+          This <div> holds both:
+          1. Hero text
+          2. Hero image
+
+          CSS can place these side-by-side on larger screens.
+        -->
+
+          <!-- HERO LEFT SIDE: TEXT -->
+          <div class="hero-text">
+            <!-- Small heading above the main heading -->
+            <p class="eyebrow">DISCOVER AFGHANISTAN</p>
+
+            <!--
+            "eyebrow" is just a CSS class name.
+            It is commonly used for small text above a heading.
+          -->
+
+            <!-- Main page heading -->
+            <h1>
+              Discover the beauty
+              <span>beyond the ordinary.</span>
+            </h1>
+
+            <!--
+            <h1> is the most important heading on the page.
+
+            Normally, a page should have one main <h1>.
+
+            <span> allows part of the heading
+            to have different CSS styling.
+          -->
+
+            <!-- Short introduction paragraph -->
+            <p class="hero-description">
+              Explore breathtaking landscapes, historic cities and unforgettable
+              journeys across Afghanistan.
+            </p>
+
+            <!-- Hero buttons container -->
+            <div class="hero-buttons">
+              <!-- Primary button -->
+              <a href="#destinations" class="btn btn-primary">
+                Explore Destinations
+              </a>
+
+              <!--
+              This link has TWO CSS classes:
+
+              btn
+              = gives basic button styling.
+
+              btn-primary
+              = gives this button its main/primary appearance.
+
+              It links to the Destinations section.
+            -->
+
+              <!-- Secondary button -->
+              <a href="#journey" class="btn btn-secondary">
+                Plan Your Journey
+              </a>
+
+              <!--
+              btn-secondary gives this button
+              a different style from the primary button.
+            --></div>
+          </div>
+
+          <!-- HERO RIGHT SIDE: IMAGE -->
+          <div class="hero-image">
+            <img
+              src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=80"
+              alt="Beautiful mountain landscape"
+            />
+
+            <!--
+            <img> displays an image.
+
+            src
+            = tells the browser where the image comes from.
+
+            This image is loaded from Unsplash.
+
+            alt
+            = alternative text describing the image.
+
+            The alt text is important for:
+            - Screen readers
+            - Accessibility
+            - Situations where the image cannot load
+          -->
+
+            <!-- Small information box over the image -->
+            <div class="image-badge">
+              <strong>15+</strong>
+              <!--
+              <strong> gives text strong importance.
+              Browsers normally display it in bold.
+            -->
+
+              <span>Places to explore</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--
+         STATS SECTION
+
+         Shows quick information/statistics about Afghanistan.
+    -->
+
+      <section class="stats">
+        <div class="stats-container container">
+          <!--
+          This container holds all four statistics.
+        -->
+
+          <!-- Statistic 1 -->
+          <div class="stat">
+            <strong>34</strong>
+            <!-- The main statistic number -->
+
+            <span>Provinces</span>
+            <!-- Description of the number -->
+          </div>
+
+          <!-- Statistic 2 -->
+          <div class="stat">
+            <strong>100+</strong>
+
+            <span>Destinations</span>
+          </div>
+
+          <!-- Statistic 3 -->
+          <div class="stat">
+            <strong>4000+</strong>
+
+            <span>Years of history</span>
+          </div>
+
+          <!-- Statistic 4 -->
+          <div class="stat">
+            <strong>∞</strong>
+            <!--
+            ∞ is the infinity symbol.
+          -->
+
+            <span>Memories</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+         DESTINATIONS SECTION
+
+         Shows different places that visitors can explore.
+     -->
+
+      <section class="destinations section" id="destinations">
+        <!--
+        This section has TWO classes:
+
+        destinations
+        = special styling for this section.
+
+        section
+        = general styling shared by multiple sections.
+
+        id="destinations"
+        = creates a unique destination on the page.
+
+        A link like:
+
+        href="#destinations"
+
+        will scroll to this section.
+      -->
+
+        <div class="container">
+          <!-- Section heading area -->
+          <div class="section-heading">
+            <!-- Left side of heading -->
+            <div>
+              <p class="eyebrow">DESTINATIONS</p>
+
+              <h2>Places worth discovering</h2>
+
+              <!--
+              <h2> is a second-level heading.
+
+              We use <h2> for major sections
+              below the main <h1>.
+            --></div>
+
+            <!-- Right side description -->
+            <p>
+              From ancient cities to peaceful valleys, discover places that tell
+              their own stories.
+            </p>
+          </div>
+
+          <!-- Destination Cards Grid -->
+          <div class="destination-grid">
+            <!--
+            This container holds all destination cards.
+
+            CSS Grid is probably used in style.css
+            to arrange these cards into columns.
+          -->
+
+            <!-- 
+               DESTINATION CARD 1: BAMYAN
+          -->
+
+            <article class="destination-card featured">
+              <!--
+              <article> is a semantic HTML element.
+
+              We use it because this destination card
+              can be understood as an independent piece
+              of content.
+
+              destination-card
+              = normal card styling.
+
+              featured
+              = gives this particular card
+                additional/special styling.
+            -->
+
+              <!-- Destination image -->
+              <img
+                src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1000&q=80"
+                alt="Historic architecture"
+              />
+
+              <!-- Text information about destination -->
+              <div class="destination-info">
+                <!-- Location name -->
+                <span class="location"> Bamyan </span>
+
+                <!-- Destination title -->
+                <h3>Valley of History</h3>
+
+                <!--
+                <h3> is a heading below <h2>.
+                It is useful for titles inside cards.
+              -->
+
+                <!-- Destination description -->
+                <p>
+                  A remarkable destination surrounded by mountains and history.
+                </p>
+
+                <!-- Destination link -->
+                <a href="#"> Explore → </a>
+
+                <!--
+                The arrow → is only a visual symbol.
+
+                href="#" is currently a placeholder.
+                Later, it could link to a Bamyan page.
+              --></div>
+            </article>
+
+            <!-- 
+               DESTINATION CARD 2: NURISTAN
+           -->
+
+            <article class="destination-card">
+              <!-- Nuristan image -->
+              <img
+                src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=1000&q=80"
+                alt="Mountain landscape"
+              />
+
+              <div class="destination-info">
+                <!-- Province/location -->
+                <span class="location"> Nuristan </span>
+
+                <!-- Card heading -->
+                <h3>Mountains & Nature</h3>
+
+                <!-- Card description -->
+                <p>Green valleys and dramatic mountain views.</p>
+
+                <!-- Placeholder link -->
+                <a href="#"> Explore → </a>
+              </div>
+            </article>
+
+            <!-- 
+               DESTINATION CARD 3: HERAT
+         -->
+
+            <article class="destination-card">
+              <!-- Herat image -->
+              <img
+                src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=80"
+                alt="Historic place"
+              />
+
+              <div class="destination-info">
+                <!-- Province/location -->
+                <span class="location"> Herat </span>
+
+                <!-- Card heading -->
+                <h3>City of Art</h3>
+
+                <!-- Card description -->
+                <p>Discover architecture, culture and heritage.</p>
+
+                <!-- Placeholder link -->
+                <a href="#"> Explore → </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!--
+         JOURNEY SECTION
+
+         Explains the basic steps for planning a journey.
+     -->
+
+      <section class="journey section" id="journey">
+        <!--
+        id="journey" allows links like:
+
+        href="#journey"
+
+        to scroll directly to this section.
+      -->
+
+        <div class="container journey-container">
+          <!--
+          This main container has:
+
+          container
+          = controls width and alignment.
+
+          journey-container
+          = controls the special layout
+            of the journey section.
+        -->
+
+          <!-- JOURNEY IMAGE -->
+          <div class="journey-image">
+            <img
+              src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80"
+              alt="Mountain journey"
+            />
+          </div>
+
+          <!-- JOURNEY TEXT CONTENT -->
+          <div class="journey-content">
+            <!-- Small heading -->
+            <p class="eyebrow">YOUR NEXT ADVENTURE</p>
+
+            <!-- Main journey section heading -->
+            <h2>Every journey begins with one decision.</h2>
+
+            <!-- Journey introduction -->
+            <p>
+              Whether you love history, nature or photography, create a journey
+              that matches your interests.
+            </p>
+
+            <!-- List of journey steps -->
+            <div class="journey-list">
+              <!-- JOURNEY STEP 1 -->
+
+              <div class="journey-item">
+                <!-- Step number -->
+                <span>01</span>
+
+                <!-- Step information -->
+                <div>
+                  <h3>Choose a destination</h3>
+
+                  <p>Find a place that inspires you.</p>
+                </div>
+              </div>
+
+              <!--
+                 JOURNEY STEP 2
+           -->
+
+              <div class="journey-item">
+                <!-- Step number -->
+                <span>02</span>
+
+                <!-- Step information -->
+                <div>
+                  <h3>Build your route</h3>
+
+                  <p>Plan the places you want to visit.</p>
+                </div>
+              </div>
+
+              <!--
+                 JOURNEY STEP 3
+           -->
+
+              <div class="journey-item">
+                <!-- Step number -->
+                <span>03</span>
+
+                <!-- Step information -->
+                <div>
+                  <h3>Start exploring</h3>
+
+                  <p>Turn your plan into an unforgettable journey.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Journey action button -->
+            <a href="#" class="btn btn-primary"> Start Planning </a>
+
+            <!--
+            This button currently uses href="#"
+            as a placeholder link.
+
+            Later it could link to:
+            - A planning page
+            - A booking page
+            - A travel form
+          --></div>
+        </div>
+      </section>
+
+      <!-- 
+         CALL TO ACTION (CTA)
+
+         CTA means "Call To Action".
+
+         Its purpose is to encourage the visitor
+         to do something.
+     -->
+
+      <section class="cta">
+        <div class="container cta-content">
+          <!-- CTA text -->
+          <div>
+            <p class="eyebrow">READY TO EXPLORE?</p>
+
+            <h2>Your next story is waiting.</h2>
+          </div>
+
+          <!-- CTA button -->
+          <a href="#" class="btn btn-light"> Explore Now → </a>
+
+          <!--
+          btn-light gives this button
+          a lighter visual style.
+        --></div>
+      </section>
+    </main>
+
+    <!--
+       FOOTER
+
+       The footer appears at the bottom of the webpage.
+
+       It normally contains:
+       - Logo
+       - Copyright
+       - Contact information
+       - Navigation links
+       - Social media links
+-->
+
+    <footer class="footer" id="about">
+      <!--
+      id="about" means the navigation link:
+
+      href="#about"
+
+      will scroll to this footer.
+    -->
+
+      <div class="container footer-content">
+        <!-- Footer left side -->
+        <div>
+          <!-- Website logo -->
+          <a href="#" class="logo"> Afghan<span>Explorer</span> </a>
+
+          <!-- Short website description -->
+          <p>Discover places. Create memories. Explore Afghanistan.</p>
+        </div>
+
+        <!-- Footer navigation links -->
+        <div class="footer-links">
+          <!-- Go to Destinations section -->
+          <a href="#destinations"> Destinations </a>
+
+          <!-- Go to Journey section -->
+          <a href="#journey"> Journey </a>
+
+          <!-- Placeholder contact link -->
+          <a href="#"> Contact </a>
+        </div>
+      </div>
+    </footer>
+
+    <!--
+       JAVASCRIPT FILE
+
+       JavaScript adds behavior/interactivity to the website.
+
+       For example, script.js may be responsible for
+       opening and closing the mobile navigation menu.
+  -->
+
+    <script src="script.js"></script>
+
+    <!--
+    src="script.js"
+    tells the browser to load JavaScript code
+    from the script.js file.
+
+    We normally put the <script> near the end of <body>
+    so the HTML content can load before JavaScript runs.
+  --></body>
+  <!-- End of all visible webpage content -->
+</html>
+<!-- End of the HTML document -->
